@@ -12,7 +12,6 @@ class Staff(models.Model):
     email = models.EmailField(null=True, blank=True)
     phone = models.CharField(max_length=200, blank=True, null=True)
     profile_pic = models.ImageField(null=True, default="default.png")
-    password = models.CharField(null=True, blank=True, max_length=30)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
@@ -31,7 +30,6 @@ class Client(models.Model):
     phone = models.CharField(max_length=200, blank=True, null=True)
     profile_pic = models.ImageField(null=True, default="default.png")
     registered_by = models.CharField(null=True, blank=True, max_length=60)
-    password = models.CharField(null=True, blank=True, max_length=30)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
@@ -57,8 +55,8 @@ class Property(models.Model):
 
 
 class Order(models.Model):
-    client = models.ForeignKey(Client, null=True, on_delete=models.CASCADE)
-    property = models.ForeignKey(Property, null=True, on_delete=models.CASCADE)
+    client = models.ForeignKey(Client, null=True, on_delete=models.CASCADE, related_name="client")
+    property = models.ForeignKey(Property, null=True, on_delete=models.CASCADE, related_name="property")
     amount_paid = models.FloatField(blank=True, null=True)
     lease_period = models.CharField(blank=True, max_length=15, null=True)
     status1 = models.ImageField(null=True, blank=True)
