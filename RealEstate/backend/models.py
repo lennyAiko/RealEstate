@@ -60,7 +60,6 @@ class Order(models.Model):
     client = models.ForeignKey(Client, null=True, on_delete=models.CASCADE)
     property = models.ForeignKey(Property, null=True, on_delete=models.CASCADE)
     amount_paid = models.FloatField(blank=True, null=True)
-    balance = models.FloatField(blank=True, null=True)
     lease_period = models.CharField(blank=True, max_length=15, null=True)
     status1 = models.ImageField(null=True, blank=True)
     status2 = models.ImageField(null=True, blank=True)
@@ -73,3 +72,6 @@ class Order(models.Model):
 
     class Meta:
         ordering = ['-date_created']
+
+    def balance(self):
+        return self.property.amount - self.amount_paid
