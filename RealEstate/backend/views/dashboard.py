@@ -20,3 +20,7 @@ def dashboard(request):
         'recent_order': recent_order,
     }
     return render(request, 'staff/dashboard.html', context)
+
+
+def done(request):
+    return render(request, 'staff/done.html')

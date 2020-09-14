@@ -7,39 +7,39 @@ from django.contrib.auth.forms import UserCreationForm
 
 class RegisterClient(UserCreationForm):
     password1 = forms.CharField(label='Enter Password',
-    widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}))
+    widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     password2 = forms.CharField(label='Confirm Password',
-    widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirm Password'}))
+    widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
 
         widgets = {
-            'username': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'}),
-            'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'First Name'}),
-            'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Last Name'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}),
-            'phone': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Phone'}),
+            'username': forms.TextInput(attrs={'class': 'form-control'}),
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'phone': forms.NumberInput(attrs={'class': 'form-control'}),
         }
 
 
-class RegisterClient(UserCreationForm):
+class RegisterStaff(UserCreationForm):
     password1 = forms.CharField(label='Enter Password',
-    widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}))
+    widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     password2 = forms.CharField(label='Confirm Password',
-    widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirm Password'}))
+    widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
 
         widgets = {
-            'username': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'}),
-            'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'First Name'}),
-            'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Last Name'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}),
-            'phone': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Phone'}),
+            'username': forms.TextInput(attrs={'class': 'form-control'}),
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'phone': forms.NumberInput(attrs={'class': 'form-control'}),
         }
 
 
@@ -49,9 +49,9 @@ class RegisterProperty(forms.ModelForm):
         fields = '__all__'
 
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Name of property'}),
-            'location': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Location of property'}),
-            'amount': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Amount'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'location': forms.TextInput(attrs={'class': 'form-control'}),
+            'amount': forms.NumberInput(attrs={'class': 'form-control'}),
         }
 
 
@@ -61,7 +61,7 @@ class MakeOrder(forms.ModelForm):
         fields = '__all__'
 
         widgets = {
-            'amount_paid': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Amount paid'}),
-            'balance': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Balance'}),
-            'lease_period': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Lease period'}),
+            'amount_paid': forms.NumberInput(attrs={'class': 'form-control'}),
+            'balance': forms.NumberInput(attrs={'class': 'form-control'}),
+            'lease_period': forms.TextInput(attrs={'class': 'form-control'}),
         }

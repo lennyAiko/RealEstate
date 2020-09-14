@@ -6,4 +6,10 @@ from django.urls import path
 
 urlpatterns = [
     path("dashboard/", dashboard, name="dashboard"),
+    path("done/", done, name="done"),
+
+    path("register_client/", registerClient, name="register_client"),
+    path("register_staff/", registerStaff, name="register_staff"),
+    path("register_property/", registerProperty, name="register_property"),
+    path("make_order/", makeOrder, name="make_order"),
 ]

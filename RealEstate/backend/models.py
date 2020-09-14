@@ -38,6 +38,12 @@ class Client(models.Model):
     class Meta:
         ordering = ['-date_created']
 
+    def total_order(self, value=0):
+        orders = self.client.all()
+        for i in orders:
+            value += i.property.amount
+        return value
+
 
 class Property(models.Model):
     name = models.CharField(max_length=200, blank=True, null=True)

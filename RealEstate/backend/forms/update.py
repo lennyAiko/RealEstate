@@ -9,7 +9,7 @@ class UpdateClient(ModelForm):
     class Meta:
         model = Client
         fields = '__all__'
-        exclude = ('registered_by')
+        exclude = ('registered_by',)
 
         widgets = {
             'username': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'}),
